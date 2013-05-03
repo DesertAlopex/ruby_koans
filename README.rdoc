@@ -1,3 +1,14 @@
+= Please read this!
+
+This repository is not what you want to download if you want to complete the Ruby Koans.
+
+What is this repository? This is the Ruby Koans, with my solutions. It is best to attempt to solve each koan on your own first. If you're stuck double check the ruby documentation or repositories such as this one where people have posted their progress. Make sure you understand why each answer is the way it is before moving on. My resources so far have been the online docs at http://www.ruby-lang.org/en/documentation/ as well as the original Pickaxe book (http://www.ruby-doc.org/docs/ProgrammingRuby/) which is several years old but still useful (The 4th edition just came out this year http://pragprog.com/book/ruby4/programming-ruby-1-9-2-0). Also Learning Ruby and the Ruby Pocket Reference from O'Reilly. 
+
+The text from the header "Neo Ruby Koans" down is the original README.
+
+Cloned from the repository at: https://github.com/neo/ruby_koans.git
+You can also check the Ruby Koans web site: http://rubykoans.com/
+
 = Neo Ruby Koans
 
 The Ruby Koans walk you along the path to enlightenment in order to learn Ruby.
