@@ -3,4 +3,4 @@ dist
 .path_progress
 .rvmrc
 *.rbc
-koans/*
+# koans/*
