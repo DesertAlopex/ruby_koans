@@ -15,21 +15,21 @@ class AboutArrays < Neo::Koan
     assert_equal [1], array
 
     array[1] = 2
-    assert_equal [1, __], array
+    assert_equal [1, 2], array
 
     array << 333
-    assert_equal __, array
+    assert_equal [1, 2, 333], array  # Alopex-Note: Remember, << puts the new item on the left end of the array
   end
 
   def test_accessing_array_elements
     array = [:peanut, :butter, :and, :jelly]
 
-    assert_equal __, array[0]
-    assert_equal __, array.first
-    assert_equal __, array[3]
-    assert_equal __, array.last
-    assert_equal __, array[-1]
-    assert_equal __, array[-3]
+    assert_equal :peanut, array[0]
+    assert_equal :peanut, array.first
+    assert_equal :jelly, array[3]
+    assert_equal :jelly, array.last
+    assert_equal :jelly, array[-1]
+    assert_equal :butter, array[-3]
   end
 
   def test_slicing_arrays
