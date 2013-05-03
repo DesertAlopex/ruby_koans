@@ -39,9 +39,27 @@ class AboutArrays < Neo::Koan
     assert_equal [:peanut, :butter], array[0,2]
     assert_equal [:and, :jelly], array[2,2]
     assert_equal [:and, :jelly], array[2,20]
-    assert_equal [], array[4,0] # Alopex-Note: Review why [4,0] is [] but [5,0] is nil. 
+    assert_equal [], array[4,0]  
     assert_equal [], array[4,100]
     assert_equal nil, array[5,0]
+	#
+	# Alopex-Note: Ruby Arrays are "Fence Post" style arrays. 
+	# This explains why array[4,0] returns [] when array[5,0] 
+	# returns nil.
+	#
+	# Huh? Thing of it this way, array[4] is the tail of the array.
+	# If you just do array[4] it will return nil as there is no
+	# value stored in the tail. But array[4,0] returns an empty
+	# array [] because it's giving a valid location and asks for
+	# a zero length array. Array[4,100] returns an empty array
+	# because it starts at a valid location (the tail), but there
+	# are no values within the requested span.
+	#
+	# Why does array[5,anything] return nil? Because array[5] is
+	# outside the bounds of the array. Position 5 is past the tail,
+	# and therefor no matter what span you ask for the result is
+	# nil because it's out of bounds.
+	# 
   end
 
   def test_arrays_and_ranges
