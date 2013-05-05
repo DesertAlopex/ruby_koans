@@ -48,6 +48,14 @@ class AboutHashes < Neo::Koan
 
     # Bonus Question: Why was "expected" broken out into a variable
     # rather than used as a literal?
+    #
+    # Alopex-Note: simply dropping "{ :one = "eins" ... } where "expected"
+    # appears in the above assertion causes an error. Ruby tries to 
+    # translate the bracketed code as a block rather than a hash
+    #
+    # Additionally, while there are slight reworkings that allow putting
+    # the hash in as a literal, none of them are as immediately readible
+    # as assert_equal expected, hash
   end
 
   def test_hash_is_unordered
