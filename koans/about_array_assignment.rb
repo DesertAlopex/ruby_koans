@@ -38,7 +38,11 @@ class AboutArrayAssignment < Neo::Koan
 
   def test_parallel_assignment_with_one_variable
     first_name, = ["John", "Smith"]
-    assert_equal __, first_name
+    assert_equal "John", first_name
+    #
+    # Alopex-Note: Pay close attention. Why only "John" assigned to first_name?
+    # It's because the left side reads "first_name," the comma makes all the difference
+    #
   end
 
   def test_swapping_with_parallel_assignment
