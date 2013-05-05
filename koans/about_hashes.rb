@@ -30,6 +30,13 @@ class AboutHashes < Neo::Koan
     # THINK ABOUT IT:
     #
     # Why might you want to use #fetch instead of #[] when accessing hash keys?
+    #
+    # Alopex-Note: The fetch method allows specifying a default response
+    # So for example hash.fetch(:doesnt_exist, "Haha Only Kidding" would 
+    # return, "Haha Only Kidding" if used on the hash in the test above.
+    #
+    # Using plain [] will return the pre-set default, which defaults to nil.
+    #
   end
 
   def test_changing_hashes
