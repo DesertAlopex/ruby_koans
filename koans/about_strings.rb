@@ -106,6 +106,17 @@ EOS
     #
     # Ruby programmers tend to favor the shovel operator (<<) over the
     # plus equals operator (+=) when building up strings.  Why?
+
+    #
+    # Alopex-Note: << changes the string, += creates a new string
+    # This makes << a little faster. Also, << involves a little less
+    # typing. This is also part of the reason for the potential gotcha
+    # up above. a = "Hello", b = a, a and b and references to the same
+    # object. Thus if you do, a << ", World" then both a and b will
+    # refer to the value "Hello, World". But because += creates a new
+    # object, if you do a += ", World" then a will refer to the value
+    # "Hello, World" while b will still refer to the value "Hello"
+    #
   end
 
   def test_double_quoted_string_interpret_escape_characters
