@@ -32,13 +32,18 @@ class AboutSymbols < Neo::Koan
   #
   # Why do we convert the list of symbols to strings and then compare
   # against the string value rather than against symbols?
+  #
+  # Alopex-Note:
+  # 
+  # We do this to avoid accidentally creating the very symbol whose presence
+  # we are testing for.
 
   in_ruby_version("mri") do
     RubyConstant = "What is the sound of one hand clapping?"
     def test_constants_become_symbols
       all_symbols_as_strings = Symbol.all_symbols.map { |x| x.to_s }
 
-      assert_equal __, all_symbols_as_strings.include?(__)
+      assert_equal true, all_symbols_as_strings.include?("RubyConstant")
     end
   end
 
