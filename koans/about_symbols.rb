@@ -49,8 +49,11 @@ class AboutSymbols < Neo::Koan
 
   def test_symbols_can_be_made_from_strings
     string = "catsAndDogs"
-    assert_equal __, string.to_sym
+    assert_equal "catsAndDogs".to_sym, string.to_sym
   end
+
+  # Alopex-Note: The symbol is not the variable name, but the actual
+  # string value. Thus the symbol is :catsAndDogs, not :string
 
   def test_symbols_with_spaces_can_be_built
     symbol = :"cats and dogs"
